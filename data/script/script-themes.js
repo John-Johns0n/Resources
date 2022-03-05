@@ -69,7 +69,7 @@ function getCurrentTheme() {
 }
 
 function switchTheme(themeCookie, invert) {
-    let stylesheet_path = /top.html/.test(window.location.href) ?
+    let stylesheet_path = /top.html/.test(window.location.href) || /help.html/.test(window.location.href) ?
         "stylesheets" :
         "../stylesheets";
 
@@ -97,7 +97,7 @@ function updateNavbarTheme(theme) {
     function changeClass(nav) {
         if (theme === "dark") {
             nav.classList.remove("navbar-light");
-            nav.classList.remove("bg-light");
+            nav.classList.remove("bg-custom");
             nav.classList.add("navbar-dark");
             nav.classList.add("bg-dark");
         }
@@ -106,7 +106,7 @@ function updateNavbarTheme(theme) {
             nav.classList.remove("navbar-dark");
             nav.classList.remove("bg-dark");
             nav.classList.add("navbar-light");
-            nav.classList.add("bg-light");
+            nav.classList.add("bg-custom");
         }
     }
 
